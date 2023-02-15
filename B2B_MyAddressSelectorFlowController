@@ -59,7 +59,10 @@ public without sharing class B2B_MyAddressSelectorFlowController {
         shippingAddress.ParentId=u.accountId;
         //'0013C00000fiOefQAE' u.accountId
         insert shippingAddress;
-        return shippingAddress.id;
+        string ShipId=shippingAddress.id;
+        
+        return ShipId;
+        // return shippingAddress.id;
     }
 
     @AuraEnabled
@@ -89,8 +92,11 @@ public without sharing class B2B_MyAddressSelectorFlowController {
             cartAddress.DeliverToPostalCode=shippingAddresslist.PostalCode;
 
             update cartAddress;
+            string msg='succesfully updated';
 
-            return 'succesfully updated';
+            return msg;
+
+            // return 'succesfully updated';
 
         } catch (Exception e) {
 
@@ -114,7 +120,11 @@ public without sharing class B2B_MyAddressSelectorFlowController {
             cartAddress.DeliverToCountry=country;
             cartAddress.DeliverToPostalCode=postalCode;
             update cartAddress;
-            return 'succesfully updated';
+            string msg='succesfully updated';
+            
+            return msg;
+           
+           //return 'succesfully updated';
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
@@ -145,8 +155,11 @@ public without sharing class B2B_MyAddressSelectorFlowController {
             cartAddress.BillingPostalCode=shippingAddresslist.PostalCode;
 
             update cartAddress;
+            string msg='succesfully updated';
 
-            return 'succesfully updated';
+            return msg;
+
+           // return 'succesfully updated';
 
            
 
@@ -213,8 +226,11 @@ public without sharing class B2B_MyAddressSelectorFlowController {
             billingCartAddress.BillingPostalCode=billToAddlist.PostalCode;
 
             update billingCartAddress;
+            string msg='Cart Bill to address has succesfully updated';
 
-            return 'Cart Bill to address has succesfully updated';
+            return msg;
+
+           // return 'Cart Bill to address has succesfully updated';
 
            
 
@@ -248,9 +264,12 @@ public without sharing class B2B_MyAddressSelectorFlowController {
         cartAddress.DeliverToPostalCode=shippingAddresslist.PostalCode;
 
         update cartAddress;
+        string msg='Cart Ship to address has succesfully updated';
+
+        return msg;
 
         
-            return 'Cart Ship to address has succesfully updated';
+       //     return 'Cart Ship to address has succesfully updated';
 
            
 
